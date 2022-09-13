@@ -10,7 +10,6 @@ const GetDownloadSpeed = async () => {
     baseUrl,
     fileSizeInBytes
   );
-
   return speed.kbps;
 };
 
