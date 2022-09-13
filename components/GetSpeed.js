@@ -1,25 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/GetSpeed.module.css";
 
 import { AiOutlineApi } from "react-icons/ai";
 import { BsDownload, BsUpload } from "react-icons/bs";
 
 import GetDownloadSpeed from "../hooks/getDownloadSpeed";
-import GetUploadSpeed from "../hooks/GetUploadSpped";
-import Ping from "../hooks/GetPing";
 
-const GetSpeed = async () => {
-
-  const [downloadSpeed, setDownloadSpeed] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDownloadSpeed(GetDownloadSpeed());
-    }, 5000);
-    return () => clearInterval(interval);
-  })
-  
-  
+const GetSpeed = () => {
   return (
     <>
       <div className={styles.network_container}>
@@ -35,7 +22,7 @@ const GetSpeed = async () => {
             <article className={`${styles.card_content} ${styles.download}`}>
               <BsDownload className={styles.card_icons} />
               <h5>Download</h5>
-              <small>{downloadSpeed} mbps</small>
+              <small>{GetDownloadSpeed()} mbps</small>
             </article>
 
             <article className={`${styles.card_content} ${styles.upload}`}>
