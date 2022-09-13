@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   --color-primary-variant: #fff;
   --color-blue: #0070f3;
