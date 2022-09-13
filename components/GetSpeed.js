@@ -4,6 +4,10 @@ import styles from "../styles/GetSpeed.module.css";
 import { AiOutlineApi } from "react-icons/ai";
 import { BsDownload, BsUpload } from "react-icons/bs";
 
+import GetDownloadSpeed from "../hooks/getDownloadSpeed";
+import GetUploadSpeed from "../hooks/GetUploadSpped";
+import Ping from "../hooks/GetPing";
+
 const GetSpeed = () => {
   return (
     <>
@@ -14,7 +18,7 @@ const GetSpeed = () => {
             <article className={`${styles.card_content} ${styles.ping}`}>
               <AiOutlineApi className={styles.card_icons} />
               <h5>Ping</h5>
-              <small>13 ms</small>
+              <small>11 ms</small>
             </article>
 
             <article className={`${styles.card_content} ${styles.download}`}>
