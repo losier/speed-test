@@ -48,6 +48,10 @@
   color: var(--color-light);
 }
 
+.value {
+  font-size: 1.7rem;
+  color: var(--color-light);
+}
 /* 
 Will use if needed. 
 
