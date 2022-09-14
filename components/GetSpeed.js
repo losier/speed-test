@@ -72,7 +72,7 @@ const GetSpeed = () => {
               <BsUpload className={styles.card_icons} />
               <h5>Upload</h5>
               <small>
-                <span className={styles.value}>{downloadSpeed}</span>
+                <span className={styles.value}>{uploadSpeed}</span>
                 mbps
               </small>
             </article>
