@@ -13,6 +13,7 @@ const GetSpeed = () => {
   const [uploadSpeed, setUploadSpeed] = useState(0);
 
   useEffect(() => {
+    // Download Speed
     async function getNetworkDownloadSpeed() {
       const baseUrl = "https://eu.httpbin.org/stream-bytes/500000";
       const fileSizeInBytes = 500000;
@@ -24,8 +25,21 @@ const GetSpeed = () => {
       setDownloadSpeed(speed.mbps);
     }
 
+    // Ping
+    async function getPing() {
+      var startTime = Date.now();
+      await fetch("https://eu.httpbin.org/stream-bytes/500000");
+      var endTime = Date.now();
+
+      var timeDiff = endTime - startTime;
+      // console.log(timeDiff);
+      setPing(timeDiff);
+    };
+
     const interval = setInterval(() => {
       getNetworkDownloadSpeed();
+      getPing();
+      setUploadSpeed(69)
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -40,8 +54,8 @@ const GetSpeed = () => {
               <AiOutlineApi className={styles.card_icons} />
               <h5>Ping</h5>
               <small>
-                <span className={styles.value}>{downloadSpeed}</span>
-                mbps
+                <span className={styles.value}>{ping}</span>
+                ms
               </small>
             </article>
 
@@ -58,7 +72,7 @@ const GetSpeed = () => {
               <BsUpload className={styles.card_icons} />
               <h5>Upload</h5>
               <small>
-                <span className={styles.value}>{downloadSpeed}</span>
+                <span className={styles.value}>{uploadSpeed}</span>
                 mbps
               </small>
             </article>
