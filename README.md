@@ -1,3 +1,3 @@
-## Spped Test
+## Speed Test
 
 will update soon...
