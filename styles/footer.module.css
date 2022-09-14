@@ -12,3 +12,12 @@
   letter-spacing: 0.1em;
   color: var(--color-light-gray);
 }
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto 3rem;
+  margin-bottom: 10px !important;
+}
