@@ -7,13 +7,22 @@ import { BsDownload, BsUpload } from "react-icons/bs";
 import NetworkSpeed from "network-speed";
 const testNetworkSpeed = new NetworkSpeed();
 
+/**
+ * @func GetSpeed
+ * @description 'example func'
+ */
 const GetSpeed = () => {
+  
   const [ping, setPing] = useState(0);
   const [downloadSpeed, setDownloadSpeed] = useState(0);
   const [uploadSpeed, setUploadSpeed] = useState(0);
 
   useEffect(() => {
-    // Download Speed
+    /**
+     * @func getNetworkDownloadSpeed
+     * @description 'example func'
+     */
+
     async function getNetworkDownloadSpeed() {
       const baseUrl = "https://eu.httpbin.org/stream-bytes/500000";
       const fileSizeInBytes = 500000;
@@ -25,7 +34,11 @@ const GetSpeed = () => {
       setDownloadSpeed(speed.mbps);
     }
 
-    // Ping
+    /**
+     * @func getPing
+     * @description 'example func'
+     */
+
     async function getPing() {
       var startTime = Date.now();
       await fetch("https://eu.httpbin.org/stream-bytes/500000");
@@ -34,16 +47,26 @@ const GetSpeed = () => {
       var timeDiff = endTime - startTime;
       // console.log(timeDiff);
       setPing(timeDiff);
-    };
+    }
 
+    /**
+     * @func interval
+     * @description 'example func'
+     * @param ( 'params0'
+     */
     const interval = setInterval(() => {
       getNetworkDownloadSpeed();
       getPing();
-      setUploadSpeed(69)
+      setUploadSpeed(69);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
+  /**
+   * @func render
+   * @description 'example func'
+   * @param ( 'params0'
+   */
   return (
     <>
       <div className={styles.network_container}>
