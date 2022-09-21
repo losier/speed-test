@@ -1,8 +1,9 @@
-import styles from "../styles/Footer.module.css";
+import React from 'react'
 
 const Footer = () => {
   return (
-    <div className={styles.footer_container}>
+    // added some tailwindcss similar to previous css.
+    <div className='w-full flex flex-col justify-center items-center'>
       <ul className={styles.socials}>
         <li>
           <a
@@ -50,7 +51,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <div className={styles.copyright}>
+      <div className='m-5 font-mono text-gray-400'>
         <small>&copy; Losier. All rights reserved.</small>
       </div>
     </div>
