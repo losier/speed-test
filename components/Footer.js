@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     // added some tailwindcss similar to previous css.
     <div className='w-full flex flex-col justify-center items-center'>
-      <ul className={styles.socials}>
+      <ul className='flex flex-wrap justify-center gap-8 m-12 mb-[10px]'>
         <li>
           <a
             href="https://github.com/losier"
