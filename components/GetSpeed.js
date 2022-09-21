@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/GetSpeed.module.css";
 
 import { AiOutlineApi } from "react-icons/ai";
 import { BsDownload, BsUpload } from "react-icons/bs";
@@ -69,33 +68,35 @@ const GetSpeed = () => {
    */
   return (
     <>
-      <div className={styles.network_container}>
+      <div className='flex flex-col items-center justify-center w-4/5 h-full'>
         <h1>Your Internet speed is:</h1>
-        <div className={styles.box}>
-          <div className={styles.card}>
-            <article className={`${styles.card_content} ${styles.ping}`}>
-              <AiOutlineApi className={styles.card_icons} />
+        <div className='justify-center'>
+          <div className='grid grid-cols-3 gap-6'>
+            {/*can't find styling for ping to refer to on previous style sheet*/}
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.ping}`}>
+              <AiOutlineApi className='text-blue-600 text-sm mb-4' />
               <h5>Ping</h5>
               <small>
-                <span className={styles.value}>{ping}</span>
+                <span className='text-base text-gray-50'>{ping}</span>
                 ms
               </small>
             </article>
-
-            <article className={`${styles.card_content} ${styles.download}`}>
-              <BsDownload className={styles.card_icons} />
-              <h5>Download</h5>
+            {/*can't find styling for download to refer to on previous style sheet*/}
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.download}`}>
+              <BsDownload className='text-blue-600 mb-4' size={25} />
+              <h5 className="text-sm uppercase">Download</h5>
               <small>
-                <span className={styles.value}>{downloadSpeed}</span>
+                <span className='text-sm bg-gray-200'>{downloadSpeed}</span>
                 mbps
               </small>
             </article>
-
-            <article className={`${styles.card_content} ${styles.upload}`}>
-              <BsUpload className={styles.card_icons} />
-              <h5>Upload</h5>
+            
+            {/*can't find styling for upload to refer to on previous style sheet*/}
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.upload}`}>
+              <BsUpload className='text-blue-600 mb-4' size={25}/>
+              <h5 className="text-sm uppercase">Upload</h5>
               <small>
-                <span className={styles.value}>{uploadSpeed}</span>
+                <span className='text-sm bg-gray-200'>{uploadSpeed}</span>
                 mbps
               </small>
             </article>
