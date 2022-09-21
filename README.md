@@ -1,3 +1,0 @@
-## Speed Test
-
-will update soon...
