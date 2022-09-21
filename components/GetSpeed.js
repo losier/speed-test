@@ -73,7 +73,7 @@ const GetSpeed = () => {
         <div className='justify-center'>
           <div className='grid grid-cols-3 gap-6'>
             {/*can't find styling for ping to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.ping}`}>
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
               <AiOutlineApi className='text-blue-600 text-sm mb-4' />
               <h5>Ping</h5>
               <small>
@@ -82,7 +82,7 @@ const GetSpeed = () => {
               </small>
             </article>
             {/*can't find styling for download to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.download}`}>
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
               <BsDownload className='text-blue-600 mb-4' size={25} />
               <h5 className="text-sm uppercase">Download</h5>
               <small>
@@ -92,7 +92,7 @@ const GetSpeed = () => {
             </article>
             
             {/*can't find styling for upload to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'} ${styles.upload}`}>
+            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
               <BsUpload className='text-blue-600 mb-4' size={25}/>
               <h5 className="text-sm uppercase">Upload</h5>
               <small>
