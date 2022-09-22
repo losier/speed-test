@@ -68,15 +68,15 @@ const GetSpeed = () => {
    */
   return (
     <>
-      <div className='flex flex-col items-center justify-center w-4/5 h-full'>
+      <div className='flex flex-col items-center justify-center md:w-4/5 h-full'>
         <h1>Your Internet speed is:</h1>
         <div className='justify-center'>
-          <div className='grid gap-6 grid-cols-3 '>
-            {/*can't find styling for ping to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent p-10 text-center rounded-sm border-solid border-blue-600'}`}>
-              <AiOutlineApi className='text-blue-600 text-4xl mb-4' />
+          <div className='grid gap-2 md:gap-6 grid-cols-3 '>
+
+            <article className={`${'bg-transparent p-5 md:p-10 text-center rounded-sm border-solid border-blue-600'}`}>
+              <AiOutlineApi className='text-blue-600 text-xl md:text-4xl mb-8 md:mb-4' />
               <h5 className="text-base uppercase">Ping</h5>
-              <small className="text-3xl text-gray-200">
+              <small className="text-xl md:text-3xl text-gray-200">
                 <span className='text-base text-gray-50'>{ping} </span>
                 ms
               </small>
