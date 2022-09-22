@@ -74,29 +74,29 @@ const GetSpeed = () => {
           <div className='grid gap-6 grid-cols-3 '>
             {/*can't find styling for ping to refer to on previous style sheet*/}
             <article className={`${'bg-transparent p-10 text-center rounded-sm border-solid border-blue-600'}`}>
-              <AiOutlineApi className='text-blue-600 text-2xl mb-4' />
-              <h5>Ping</h5>
+              <AiOutlineApi className='text-blue-600 text-4xl mb-4' />
+              <h5 className="text-base uppercase">Ping</h5>
               <small className="text-3xl text-gray-200">
-                <span className='text-base text-gray-50'>{ping}</span>
+                <span className='text-base text-gray-50'>{ping} </span>
                 ms
               </small>
             </article>
             {/*can't find styling for download to refer to on previous style sheet*/}
             <article className={`${'bg-transparent  p-10 text-center rounded-sm border-solid border-blue-600'}`}>
-              <BsDownload className='text-blue-600 mb-4' size={25} />
+              <BsDownload className='text-blue-600 text-4xl mb-4'/>
               <h5 className="text-base uppercase">Download</h5>
               <small className="text-3xl text-gray-200">
-                <span className='text-sm bg-gray-200'>{downloadSpeed}</span>
+                <span className='text-base text-gray-50'>{downloadSpeed} </span>
                 mbps
               </small>
             </article>
             
             {/*can't find styling for upload to refer to on previous style sheet*/}
             <article className={`${'bg-transparent  p-10 text-center rounded-sm border-solid border-blue-600'}`}>
-              <BsUpload className='text-blue-600 mb-4' size={25}/>
+              <BsUpload className='text-blue-600 text-4xl mb-4'/>
               <h5 className="text-sm uppercase">Upload</h5>
               <small className="text-3xl text-gray-200">
-                <span className='text-sm bg-gray-200'>{uploadSpeed}</span>
+                <span className='text-base text-gray-50'>{uploadSpeed} </span>
                 mbps
               </small>
             </article>
