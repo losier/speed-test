@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 
 export default function Home() {
   return (
-    <div className='p-[2rem]'>
+    <div className='m-0 p-0 outline-none box-border no-underline w-screen h-screen text-white bg-black'>
       <Head>
         <title>Speed Test</title>
         <meta name="description" content="check your internet speed." />
@@ -14,9 +14,9 @@ export default function Home() {
       </Head>
       
       {/*Main Component with tailwind styling.*/}
-      <main className='min-h-[100vh] p-[4rem] flex-1 flex-col justify-center items-center '>
-        <h1 className='m-0 leading-relaxed text-base text-center'>
-          Speed <span>Test</span>
+      <main className='flex-initial min-h-screen p-16 flex flex-col justify-center items-center'>
+        <h1 className='m-0 text-6xl text-center'>
+          Speed <span className='text-blue-600 no-underline'>Test</span>
         </h1>
           <GetSpeed />
       </main>

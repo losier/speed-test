@@ -71,31 +71,31 @@ const GetSpeed = () => {
       <div className='flex flex-col items-center justify-center w-4/5 h-full'>
         <h1>Your Internet speed is:</h1>
         <div className='justify-center'>
-          <div className='grid grid-cols-3 gap-6'>
+          <div className='grid gap-6 grid-cols-3 '>
             {/*can't find styling for ping to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
-              <AiOutlineApi className='text-blue-600 text-sm mb-4' />
+            <article className={`${'bg-transparent p-10 text-center rounded-sm border-solid border-blue-600'}`}>
+              <AiOutlineApi className='text-blue-600 text-2xl mb-4' />
               <h5>Ping</h5>
-              <small>
+              <small className="text-3xl text-gray-200">
                 <span className='text-base text-gray-50'>{ping}</span>
                 ms
               </small>
             </article>
             {/*can't find styling for download to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
+            <article className={`${'bg-transparent  p-10 text-center rounded-sm border-solid border-blue-600'}`}>
               <BsDownload className='text-blue-600 mb-4' size={25} />
-              <h5 className="text-sm uppercase">Download</h5>
-              <small>
+              <h5 className="text-base uppercase">Download</h5>
+              <small className="text-3xl text-gray-200">
                 <span className='text-sm bg-gray-200'>{downloadSpeed}</span>
                 mbps
               </small>
             </article>
             
             {/*can't find styling for upload to refer to on previous style sheet*/}
-            <article className={`${'bg-transparent border-2 border-solid text-center transition'}`}>
+            <article className={`${'bg-transparent  p-10 text-center rounded-sm border-solid border-blue-600'}`}>
               <BsUpload className='text-blue-600 mb-4' size={25}/>
               <h5 className="text-sm uppercase">Upload</h5>
-              <small>
+              <small className="text-3xl text-gray-200">
                 <span className='text-sm bg-gray-200'>{uploadSpeed}</span>
                 mbps
               </small>
