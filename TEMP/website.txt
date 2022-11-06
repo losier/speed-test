@@ -1,0 +1,4 @@
+https://javascript.info/network
+https://ip-api.com/docs/api:json
+https://getjsonip.com/
+https://www.youtube.com/watch?v=R-V9DVxsSic

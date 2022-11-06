@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meter_card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.meter {
+  background: #080808f0;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 4rem;
+  text-align: center;
+  transition: 400ms;
+}
+
+.meter:hover {
+  background: transparent;
+  border-color: #0070f3;
+  cursor: default;
+}
+
+.meter h2 {
+  font-size: 1.5rem;
+}
+
+.meter small {
+  font-size: 1rem;
+  color: #bfbfbf;
+}
+
+.card_icons {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
