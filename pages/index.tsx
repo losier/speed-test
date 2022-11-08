@@ -18,7 +18,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Speed{" "}
           <a
-            href="javascript:void(0)"
+            href="#0"
             onClick={() => {
               return false;
             }}

@@ -4,17 +4,15 @@ import styles from "../styles/TestMeter.module.css";
 //icons
 import { BsSpeedometer2, BsUpload, BsDownload } from "react-icons/bs";
 
+import latency from "../hooks/getLatency";
+
 const TestMeter = () => {
   const [ping, setPing] = useState(0);
   const [download, setDownload] = useState(0);
   const [upload, setUpload] = useState(0);
 
-  const getPing = () => {
-    const startTime = Date.now();
-
-    const endTime = Date.now();
-
-    setPing(endTime - startTime);
+  const testFnc = async () => {
+    setPing(await latency());
   };
 
   return (
@@ -37,6 +35,7 @@ const TestMeter = () => {
           <h2>{upload}</h2>
           <small>Upload</small>
         </article>
+        <button onClick={testFnc}>Get Ping</button>
       </div>
     </div>
   );
