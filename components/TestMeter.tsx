@@ -4,7 +4,10 @@ import styles from "../styles/TestMeter.module.css";
 //icons
 import { BsSpeedometer2, BsUpload, BsDownload } from "react-icons/bs";
 
+// importing hooks function
 import latency from "../hooks/getLatency";
+import getDownload from "../hooks/getDownload";
+import getUpload from "../hooks/getUpload";
 
 const TestMeter = () => {
   const [ping, setPing] = useState(0);
@@ -13,6 +16,8 @@ const TestMeter = () => {
 
   const testFnc = async () => {
     setPing(await latency());
+    setDownload(await getDownload());
+    setUpload(await getUpload());
   };
 
   return (
