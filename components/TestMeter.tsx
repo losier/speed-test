@@ -11,12 +11,12 @@ import getUpload from "../hooks/getUpload";
 
 const TestMeter = () => {
   const [ping, setPing] = useState(0);
-  const [download, setDownload] = useState(0);
+  const [download, setDownload] = useState("");
   const [upload, setUpload] = useState(0);
 
   const testFnc = async () => {
     setPing(await latency());
-    setDownload(getDownload());
+    setDownload(await getDownload());
     setUpload(await getUpload());
   };
 
