@@ -5,28 +5,37 @@ const size = 61936;
 const getDownload = () => {
   var image = new Image();
   image.src = imageURL;
+
   var startTime = Date.now();
-  console.log("started", startTime);
-  const loadImage = () => {
-    let kbps_speed;
-    image.onload = () => {
-      let endTime = Date.now();
-      let responseTime = endTime - startTime;
 
-      const bitsLoaded = size * 8;
-      const speedBps = bitsLoaded / responseTime;
-      const speedKbps = (speedBps / 1024).toFixed(2);
+  var onLoadFunction = () => {
+    var endTime = Date.now();
 
-      kbps_speed = speedKbps;
-    };
-    let speed;
-    if (kbps_speed > 1000) {
-      speed = kbps_speed;
+    var duration = endTime - startTime;
+    var bitsLoader = size * 8;
+    var speedBps = bitsLoader / duration;
+    var speed = speedBps / 1024;
+
+    var speedValue;
+
+    if (speed > 1000) {
+      speedValue = (speed / 1024).toString().slice(0, 4) + " Mbps";
     } else {
-      speed = 0;
+      speedValue = speed.toString().slice(0, 4) + " Kbps";
     }
+
+    return speedValue;
   };
-  console.log("ended", Date.now());
+
+  image.onload = onLoadFunction;
+  image.onerror = () => {
+    return "❌";
+  };
+  image.src = imageURL;
+
+  let speed = onLoadFunction();
+
+  return speed;
 };
 
 export default getDownload;
