@@ -1,41 +1,24 @@
-const imageURL =
-  "https://raw.githubusercontent.com/losier/speed-test/master/assets/image.jpg";
-const size = 61936;
+import NetworkSpeedCheck from "network-speed";
+const testNetworkSpeed = new NetworkSpeedCheck();
 
-const getDownload = () => {
-  var image = new Image();
-  image.src = imageURL;
+async function getDownloads() {
+  const baseUrl =
+    "https://raw.githubusercontent.com/losier/speed-test/master/assets/image.jpg";
+  const fileSizeInBytes = 61936;
+  const speed = await testNetworkSpeed.checkDownloadSpeed(
+    baseUrl,
+    fileSizeInBytes
+  );
+  var returnValue = "";
+  var speedInmbps = parseFloat(speed.kbps);
+  if (speedInmbps != NaN) returnValue = "❌";
 
-  var startTime = Date.now();
+  if (speedInmbps < 1000) {
+    returnValue = speedInmbps + " kbps";
+  } else {
+    returnValue = (speedInmbps / 1000).toFixed(2) + " mbps";
+  }
+  return returnValue;
+}
 
-  var onLoadFunction = () => {
-    var endTime = Date.now();
-
-    var duration = endTime - startTime;
-    var bitsLoader = size * 8;
-    var speedBps = bitsLoader / duration;
-    var speed = speedBps / 1024;
-
-    var speedValue;
-
-    if (speed > 1000) {
-      speedValue = (speed / 1024).toString().slice(0, 4) + " Mbps";
-    } else {
-      speedValue = speed.toString().slice(0, 4) + " Kbps";
-    }
-
-    return speedValue;
-  };
-
-  image.onload = onLoadFunction;
-  image.onerror = () => {
-    return "❌";
-  };
-  image.src = imageURL;
-
-  let speed = onLoadFunction();
-
-  return speed;
-};
-
-export default getDownload;
+export default getDownloads;
