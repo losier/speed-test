@@ -16,7 +16,7 @@ const TestMeter = () => {
 
   const testFnc = async () => {
     setPing(await latency());
-    setDownload(await getDownload());
+    setDownload(getDownload());
     setUpload(await getUpload());
   };
 
